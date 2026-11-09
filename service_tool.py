@@ -21,7 +21,7 @@ import canon_network
 import canon_ivec
 
 APP_NAME = "SAV Service Tool"
-APP_VERSION = "2.0.0"
+APP_VERSION = "2.0.1"
 HERE = os.path.dirname(os.path.abspath(sys.argv[0]))
 COMMANDS_FILE = os.path.join(HERE, "commands.json")
 
@@ -42,6 +42,15 @@ class ServiceTool(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title(APP_NAME)
+        # Icône de fenêtre : fournie dans l'exe (PyInstaller) ou dans assets\ en mode script
+        base = getattr(sys, "_MEIPASS", os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets"))
+        try:
+            self.iconbitmap(default=os.path.join(base, "sav.ico"))
+            # Grande icône (barre des tâches, Alt+Tab)
+            self._icon = tk.PhotoImage(file=os.path.join(base, "sav-256.png"))
+            self.iconphoto(True, self._icon)
+        except tk.TclError:
+            pass
         self.geometry("1100x800")
         self.commands = self._load_commands()
         self._q = queue.Queue()
@@ -142,7 +151,7 @@ class ServiceTool(tk.Tk):
         self.config(menu=menu)
 
         # ---- barre latérale
-        side = tk.Frame(self, bg=C["nav"], width=210)
+        side = tk.Frame(self, bg=C["nav"], width=228)
         side.pack(side="left", fill="y")
         side.pack_propagate(False)
         tk.Label(side, text="SAV", bg=C["nav"], fg="white", font=("Segoe UI Black", 22)).pack(anchor="w", padx=22, pady=(22, 0))
@@ -316,15 +325,16 @@ class ServiceTool(tk.Tk):
                        "Remise à zéro de l'absorbeur d'encre (erreurs 5B00 / 5B01 / 1700).")
         cols = tk.Frame(p, bg=C["bg"])
         cols.pack(fill="both", expand=True)
+        # La colonne « Marche à suivre » est placée en premier pour garder sa largeur
+        right = tk.Frame(cols, bg=C["bg"], width=300)
+        right.pack(side="right", fill="y", padx=(12, 0))
         left = tk.Frame(cols, bg=C["bg"])
         left.pack(side="left", fill="both", expand=True)
-        right = tk.Frame(cols, bg=C["bg"], width=300)
-        right.pack(side="left", fill="y", padx=(12, 0))
 
         s = self._section(left, "Imprimante")
         row = ttk.Frame(s, style="Card.TFrame")
         row.pack(fill="x")
-        self.usb_cb = ttk.Combobox(row, state="readonly", width=38)
+        self.usb_cb = ttk.Combobox(row, state="readonly", width=34)
         self.usb_cb.pack(side="left")
         self.usb_cb.bind("<<ComboboxSelected>>", lambda e: self._show_profile())
         ttk.Button(row, text="Détecter", command=self.detect_usb).pack(side="left", padx=8)
@@ -359,7 +369,7 @@ class ServiceTool(tk.Tk):
             r.pack(fill="x", pady=3)
             tk.Label(r, text=str(i), bg=C["accent"], fg="white", font=("Segoe UI Semibold", 9),
                      width=2).pack(side="left", anchor="n", pady=2)
-            ttk.Label(r, text=t, style="Card.TLabel", wraplength=230, justify="left").pack(
+            ttk.Label(r, text=t, style="Card.TLabel", wraplength=225, justify="left").pack(
                 side="left", padx=8, anchor="w")
 
     def _build_net_page(self):

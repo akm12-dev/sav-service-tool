@@ -23,7 +23,7 @@ Logiciel gratuit AKM12 — fiche et téléchargement : https://akm12.com/logicie
 powershell -ExecutionPolicy Bypass -File .\build.ps1   # → release\SAVServiceTool-<version>-windows.zip
 ```
 
-Python 3 et PyInstaller sont nécessaires. Aucune autre dépendance : uniquement la bibliothèque standard.
+Python 3 et PyInstaller sont nécessaires. Icône : `py assetsmake_icon.py`. Guide PDF : `py docsbuildshots.py docsbuildshots` puis `py docsbuildmake_pdf.py docsbuildshots docsGuide_SAV_Service_Tool-<version>.pdf` (convertir d'abord les captures PNG en JPG). Aucune autre dépendance : uniquement la bibliothèque standard.
 
 ## Modèles validés
 

@@ -1,9 +1,13 @@
 __pycache__/
 *.pyc
-build/
-dist/
+/build/
+/dist/
 dist_v*/
 release/
 service_tool.log
 last_model.txt
 *.spec
+docs/build/shots/*.png
+docs/build/pages/
+docs/build/*.png
+assets/apercu-icone.png

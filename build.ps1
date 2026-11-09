@@ -6,7 +6,8 @@ Set-Location $here
 $version = (Select-String -Path service_tool.py -Pattern 'APP_VERSION = "(.+)"').Matches[0].Groups[1].Value
 $work = Join-Path $env:TEMP 'savst_build'
 py -m PyInstaller --noconfirm --clean --onefile --windowed --name SAVServiceTool `
-  --add-data "$here\commands.json;." --version-file "$here\version_info.txt" `
+  --add-data "$here\commands.json;." --add-data "$here\assets\sav.ico;." --add-data "$here\assets\sav-256.png;." `
+  --icon "$here\assets\sav.ico" --version-file "$here\version_info.txt" `
   --distpath "$here\dist" --workpath $work --specpath $work service_tool.py
 if ($LASTEXITCODE -ne 0) { throw 'Echec PyInstaller' }
 $pkg = Join-Path $here "release\SAVServiceTool-$version-windows"

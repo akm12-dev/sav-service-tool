@@ -811,7 +811,10 @@ class ServiceTool(tk.Tk):
         self.open_web()
 
     def about(self):
-        messagebox.showinfo("À propos", f"{APP_NAME}\nVersion {APP_VERSION}\n\nOutil interne SAV.")
+        messagebox.showinfo("À propos", f"{APP_NAME}\nVersion {APP_VERSION}\n\n"
+                            "Logiciel gratuit développé et distribué par AKM12 — Advanced Knowledge & Maintenance.\n"
+                            "https://akm12.com/logiciels/sav-service-tool\n\n"
+                            "Logiciel indépendant, non édité par Canon. Licences tierces : THIRD_PARTY_NOTICES.txt")
 
 
 if __name__ == "__main__":

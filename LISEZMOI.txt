@@ -1,0 +1,28 @@
+SAV SERVICE TOOL — Maintenance des imprimantes jet d'encre Canon
+Logiciel gratuit AKM12 — https://akm12.com/logiciels/sav-service-tool
+
+CONTENU DE L'ARCHIVE
+  SAVServiceTool.exe        le logiciel (aucune installation)
+  commands.json             catalogue des commandes (recréé automatiquement s'il manque)
+  THIRD_PARTY_NOTICES.txt   licences des composants tiers : à conserver avec le logiciel
+  LISEZMOI.txt              ce fichier
+
+DÉMARRAGE
+  1. Extraire l'archive dans un dossier (par exemple sur une clé USB). Garder les fichiers ensemble.
+  2. Brancher l'imprimante en USB, puis double-cliquer sur SAVServiceTool.exe.
+  3. Si Windows SmartScreen s'affiche : « Informations complémentaires » puis « Exécuter quand même ».
+  Le journal est enregistré dans service_tool.log, à côté du logiciel.
+
+ERREUR 5B00 (compteur d'encre usagée) — modèles validés : MAXIFY MB2100 / MB2150, G6000 / G6020
+  1. Remplacer ou nettoyer les tampons d'encre usagée AVANT la remise à zéro
+     (sinon l'encre peut déborder de l'imprimante).
+  2. « Détecter » en mode normal.
+  3. Passer l'imprimante en mode service (voir l'aide dans le logiciel), puis « Détecter » :
+     le mode doit indiquer « Service ».
+  4. « Remettre le compteur à zéro ».
+  5. Éteindre avec le bouton ON (ne pas débrancher), puis rallumer.
+  La remise à zéro a été validée sur le firmware 1.130 du MB2150 : une mise à jour du firmware
+  peut la bloquer.
+
+Logiciel indépendant, non édité ni approuvé par Canon. Canon, MAXIFY et PIXMA sont des marques de Canon Inc.
+Fourni « en l'état », sans garantie. Signaler un problème : https://github.com/akm12-dev/releases/issues

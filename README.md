@@ -28,7 +28,7 @@ Python 3 et PyInstaller sont nécessaires. Aucune autre dépendance : uniquement
 ## Modèles validés
 
 - Remise à zéro 5B00 : MAXIFY MB2100 / MB2150 (firmware 1.130), G6000 / G6020.
-- Page calibrage et nettoyages : MB2100 series, G3000 series.
+- Page calibrage et nettoyages : MAXIFY MB2100 / MB2150 (confirmé) ; G3000 series (trames du projet canon-ij-maint).
 
 Les fonctions de la page « Avancé » dont la trame n'est pas connue (`"status": "missing"` dans `commands.json`)
 refusent de s'exécuter.

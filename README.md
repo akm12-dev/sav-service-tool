@@ -40,3 +40,10 @@ Les fonctions de la page « Avancé » dont la trame n'est pas connue (`"status"
 refusent de s'exécuter.
 
 Logiciel indépendant, non édité ni approuvé par Canon.
+
+## Licence
+
+Code consultable, tous droits réservés — voir [LICENSE](LICENSE). Vous pouvez lire, cloner et compiler ce code
+pour votre propre usage ; sa redistribution, sa modification publiée et sa réutilisation demandent l'accord
+d'AKM12. Les versions officielles gratuites sont publiées sur https://akm12.com et
+https://github.com/akm12-dev/releases.

@@ -1,0 +1,29 @@
+{
+  "_info": "Catalogue des commandes. 'format' = 'text' (\\n autorisé) ou 'hex'. 'status' = 'ok' (testée), 'unverified' (à confirmer sur votre modèle) ou 'missing' (trame à fournir). Remplissez 'payload' avec une trame capturée (ex. USBPcap + Wireshark) pour activer une fonction.",
+  "commands": {
+    "nozzle_check":   {"label": "Page calibrage",   "format": "text", "status": "ok", "payload": "BJLStart\nControlMode=Common\nNozzleCheck\nBJLEnd\n"},
+    "cleaning":       {"label": "Cleaning",       "format": "text", "status": "unverified", "payload": "BJLStart\nControlMode=Common\nCleaning\nBJLEnd\n"},
+    "deep_cleaning":  {"label": "Deep Cleaning",  "format": "text", "status": "unverified", "payload": "BJLStart\nControlMode=Common\nDeepCleaning\nBJLEnd\n"},
+    "cleaning_bk":    {"label": "Cleaning Bk",    "format": "text", "status": "unverified", "payload": "BJLStart\nControlMode=Common\nCleaningBlack\nBJLEnd\n"},
+    "cleaning_cl":    {"label": "Cleaning Cl",    "format": "text", "status": "unverified", "payload": "BJLStart\nControlMode=Common\nCleaningColor\nBJLEnd\n"},
+
+    "test_print":     {"label": "Test Print",     "format": "hex", "status": "missing", "payload": ""},
+    "eeprom_print":   {"label": "EEPROM",         "format": "hex", "status": "missing", "payload": ""},
+    "eeprom_save":    {"label": "EEPROM Save",    "format": "hex", "status": "missing", "payload": ""},
+    "log_save":       {"label": "LOG Save",       "format": "hex", "status": "missing", "payload": ""},
+    "panel_check":    {"label": "Panel Check",    "format": "hex", "status": "missing", "payload": ""},
+    "integration":    {"label": "Integration",    "format": "hex", "status": "missing", "payload": ""},
+    "write_sn":       {"label": "Write S/N",      "format": "hex", "status": "missing", "payload": ""},
+    "system_cleaning":{"label": "System Cleaning","format": "hex", "status": "missing", "payload": ""},
+    "calibration":    {"label": "Calibration",    "format": "hex", "status": "missing", "payload": ""},
+    "user_cleaning_off":{"label": "User Cleaning OFF","format": "hex", "status": "missing", "payload": ""},
+    "error_status":   {"label": "Error Status",   "format": "hex", "status": "missing", "payload": ""},
+    "endurance":      {"label": "Endurance",      "format": "hex", "status": "missing", "payload": ""},
+
+    "set_destination":       {"label": "Set Destination ({region})",          "format": "hex", "status": "missing", "payload": ""},
+    "clear_ink_counter":     {"label": "Clear Ink Counter ({absorber})  -> 5B00", "format": "hex", "status": "missing", "payload": ""},
+    "set_absorber_counter":  {"label": "Ink Absorber Counter ({absorber}={value}%)", "format": "hex", "status": "missing", "payload": ""},
+    "pump_counter":          {"label": "Pump Counter ({value})",             "format": "hex", "status": "missing", "payload": ""},
+    "transport_mode":        {"label": "Service Transportation Mode ({flag})","format": "hex", "status": "missing", "payload": ""}
+  }
+}

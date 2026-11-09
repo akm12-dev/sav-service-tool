@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+build/
+dist/
+dist_v*/
+release/
+service_tool.log
+last_model.txt
+*.spec
